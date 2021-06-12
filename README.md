@@ -1,2 +1,4 @@
 # fakeupdate
-Fake Win10 update screen
+A fake Win10 update screen
+<br>
+<img src="https://github.com/qiu-x/fakeupdate/raw/main/screenshot.png" height="400"/>
