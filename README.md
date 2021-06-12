@@ -1,2 +1,2 @@
-# fake_update
+# fakeupdate
 Fake Win10 update screen
