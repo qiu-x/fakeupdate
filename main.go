@@ -239,7 +239,7 @@ func main() {
 	glfw.WindowHint(glfw.OpenGLProfile, glfw.OpenGLCoreProfile)
 	glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)
 	glfw.WindowHint(glfw.Samples, 6)
-	window, err := glfw.CreateWindow(windowWidth, windowHeight, "fakeupdate", nil, nil)
+	window, err := glfw.CreateWindow(windowWidth, windowHeight, "fakeupdate", glfw.GetPrimaryMonitor(), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -421,7 +421,9 @@ func main() {
 
 		// Maintenance
 		window.SwapBuffers()
-		glfw.PollEvents()
+
+		// Don't poll events ;)
+		//glfw.PollEvents()
 		gl.Viewport(0, 0, int32(windowWidth), int32(windowHeight))
 	}
 }
