@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/go-gl/gl/v3.3-core/gl"
+	"github.com/go-gl/gl/v3.2-compatibility/gl"
 	"github.com/go-gl/glfw/v3.3/glfw"
 	"github.com/go-gl/mathgl/mgl32"
 
@@ -170,7 +170,6 @@ void main() {
 		vec4(0.0, 0.0, 0.0, 1.0)
 	);
 	gl_Position = vec4(vert * scale, 1.0) * transform * window_scale;
-
 }
 ` + "\x00"
 
@@ -178,9 +177,9 @@ var DotFragmentShader = `
 #version 330
 uniform sampler2D tex;
 in vec2 fragTexCoord;
-out vec3 outputColor;
+out vec4 outputColor;
 void main() {
-    outputColor = vec3(1,1,1);
+    outputColor = vec4(1,1,1, 1);
 }
 ` + "\x00"
 
@@ -353,7 +352,7 @@ func main() {
 		y := float32(r * float32(math.Cos(i)))
 		circleVertices = append(circleVertices, x)
 		circleVertices = append(circleVertices, y)
-		circleVertices = append(circleVertices, 0.1)
+		circleVertices = append(circleVertices, 0.0)
 	}
 
 	var dots_vbo uint32
