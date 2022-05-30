@@ -243,6 +243,7 @@ func main() {
 		panic(err)
 	}
 	window.MakeContextCurrent()
+	window.SetInputMode(glfw.CursorMode, glfw.CursorHidden)
 
 	// Initialize Glow
 	if err := gl.Init(); err != nil {
