@@ -422,8 +422,7 @@ func main() {
 		// Maintenance
 		window.SwapBuffers()
 
-		// Don't poll events ;)
-		//glfw.PollEvents()
+		glfw.PollEvents()
 		gl.Viewport(0, 0, int32(windowWidth), int32(windowHeight))
 	}
 }
