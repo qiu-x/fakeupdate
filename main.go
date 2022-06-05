@@ -232,6 +232,11 @@ func main() {
 	}
 	defer glfw.Terminate()
 
+	// Get monitor size
+	mon := glfw.GetPrimaryMonitor()
+	mode := mon.GetVideoMode()
+	windowWidth, windowHeight = mode.Width, mode.Height
+
 	glfw.WindowHint(glfw.Resizable, glfw.True)
 	glfw.WindowHint(glfw.ContextVersionMajor, 4)
 	glfw.WindowHint(glfw.ContextVersionMinor, 1)
